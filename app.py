@@ -24,7 +24,7 @@ with st.sidebar:
 # --- Caching Functions ---
 @st.cache_data(ttl=600)
 def get_proton_flux():
-    url = "https://services.swpc.noaa.gov/json/goes/primary/differential-proton-flux-1-day.json"
+    url = "https://services.swpc.noaa.gov/json/goes/primary/integral-protons-3-day.json"
     data = requests.get(url).json()
     df = pd.DataFrame(data)
     df['time_tag'] = pd.to_datetime(df['time_tag'])
